@@ -45,6 +45,15 @@ CATCH_MODEL = Model('models/combine_soldier.mdl')
 # =============================================================================
 for player in PlayerIter():
     catcher[player.userid] = 0
+    
+# =============================================================================
+# >> LOAD
+# =============================================================================    
+def load():
+    if _get_player_count() >= 2:
+        global game_active
+        game_active = 1
+        _start_countdown(round_start_time)        
 
 # =============================================================================
 # >> LISTENERS
